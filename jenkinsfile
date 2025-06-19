@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/yourusername/your-repo.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                // Add your build commands here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the app...'
+                // Your deployment commands (e.g., shell script, scp, kubectl, etc.)
+            }
+        }
+    }
+}
